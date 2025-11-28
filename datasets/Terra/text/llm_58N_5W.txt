@@ -1,0 +1,27 @@
+Prompt: <|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a meteorological expert responsible for explaining the factors that influence climate in specific regions.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+We have a series environment-related data for a global grid divided into 1x1 degree latitude and longitude cells. Please generate a detailed text for given grid cell describing the main factors that may influence climate in that area. Include the following aspects:
+                1. **Geographical Location**: Which continent or country does it belong to?
+                2. **Climate Type**: What type of climate does this area have (e.g., tropical, temperate, polar)?
+                3. **Ocean Influence**: Is this area close to the ocean or large water bodies? How does the ocean influence the rainfall?
+                4. **Terrain**: What are the terrain features of this area (e.g., mountains, plains, deserts)?
+                5. **Monsoons**: Is this area affected by monsoons? How do monsoons influence the rainfall?
+                6. **Airflows and Wind Belts**: What are the main airflows and wind belts affecting this area?
+                7. **Vegetation Cover**: What is the vegetation cover like in this area? How does vegetation influence rainfall?
+                8. **Human Activities**: How do human activities (e.g., agriculture, urbanization) influence rainfall in this area?
+                I will provide the latitude and longitude range of the area I want to describe, along with the vegetation type percentage, climate type and average altitude of the area. This information can be used as a reference to generate a more accurate description, but do not just focus on these points. 
+                If there is no climate type, it means this area is primarily ocean.
+                Please write the description in a paragraph, and avoid saying other things.
+                Please generate a text description for (57,58)N and (4,5)W in country U.K. according to the above structure.
+                If the country information is None, this region does not belong to any country.
+                Landvegetation: mosaic_herbaceous: 30.833%; sparse_vegetation: 17.778%; shrub_or_herbaceous_cover_flooded: 15.278%; tree_needleleaved_evergreen_closed_to_open: 14.722%; grassland: 7.500%; mosaic_tree_and_shrub: 6.667%; cropland_rainfed_herbaceous_cover: 3.056%; water: 2.222%; tree_broadleaved_deciduous_closed_to_open: 1.111%; mosaic_cropland: 0.556%; mosaic_natural_vegetation: 0.278%.
+                Climate: Mild temperate, Fully humid, Cool summer.
+                Mean Elevation: 203.033 meter.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+
+
+
+Generated:The grid cell located at (57,58)N and (4,5)W in the United Kingdom belongs to the continent of Europe and the country of the UK. This region falls under the category of a mild temperate climate, characterized by fully humid conditions and a cool summer. The area is influenced by its proximity to the Atlantic Ocean, which plays a significant role in shaping its climate. The prevailing westerly winds bring moisture-laden air from the ocean, resulting in significant rainfall throughout the year. The terrain of this region is primarily composed of rolling hills and low-lying plains, with an average elevation of 203 meters. The area is not directly affected by monsoons, but it does experience occasional rainfall from the Azores High, a high-pressure system that brings warm, moist air from the Atlantic. The main airflows affecting this region are the westerly winds from the Atlantic and the northerly winds from the Arctic. The vegetation cover in this area is diverse, with a mix of herbaceous and shrub vegetation, grasslands, and croplands, which contribute to the region's overall rainfall patterns. Human activities such as agriculture and urbanization also influence rainfall in this area, particularly through the use of irrigation systems and the urban heat island effect. Overall, the combination of oceanic influence, terrain, and vegetation cover shapes the climate of this region, resulting in a mild and humid environment with significant rainfall throughout the year.

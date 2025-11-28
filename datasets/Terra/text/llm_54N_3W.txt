@@ -1,0 +1,33 @@
+Prompt: <|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a meteorological expert responsible for explaining the factors that influence climate in specific regions.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+We have a series environment-related data for a global grid divided into 1x1 degree latitude and longitude cells. Please generate a detailed text for given grid cell describing the main factors that may influence climate in that area. Include the following aspects:
+                1. **Geographical Location**: Which continent or country does it belong to?
+                2. **Climate Type**: What type of climate does this area have (e.g., tropical, temperate, polar)?
+                3. **Ocean Influence**: Is this area close to the ocean or large water bodies? How does the ocean influence the rainfall?
+                4. **Terrain**: What are the terrain features of this area (e.g., mountains, plains, deserts)?
+                5. **Monsoons**: Is this area affected by monsoons? How do monsoons influence the rainfall?
+                6. **Airflows and Wind Belts**: What are the main airflows and wind belts affecting this area?
+                7. **Vegetation Cover**: What is the vegetation cover like in this area? How does vegetation influence rainfall?
+                8. **Human Activities**: How do human activities (e.g., agriculture, urbanization) influence rainfall in this area?
+                I will provide the latitude and longitude range of the area I want to describe, along with the vegetation type percentage, climate type and average altitude of the area. This information can be used as a reference to generate a more accurate description, but do not just focus on these points. 
+                If there is no climate type, it means this area is primarily ocean.
+                Please write the description in a paragraph, and avoid saying other things.
+                Please generate a text description for (53,54)N and (2,3)W in country U.K. according to the above structure.
+                If the country information is None, this region does not belong to any country.
+                Landvegetation: grassland: 60.833%; cropland_rainfed_herbaceous_cover: 13.889%; urban: 11.389%; water: 6.111%; mosaic_cropland: 2.778%; mosaic_natural_vegetation: 1.944%; mosaic_herbaceous: 1.944%; mosaic_tree_and_shrub: 0.833%; tree_broadleaved_deciduous_closed_to_open: 0.278%.
+                Climate: Mild temperate, Fully humid, Warm summer.
+                Mean Elevation: 123.533 meter.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+
+
+
+Generated:The grid cell with coordinates (53,54)N and (2,3)W falls within the United Kingdom, a country located in Northwest Europe. This region experiences a Mild temperate climate, characterized by warm summers and mild winters. The proximity to the Atlantic Ocean plays a significant role in shaping the climate of this area, with the warm Gulf Stream bringing moisture-laden air that contributes to the region's high humidity. The ocean influence also leads to significant rainfall, particularly during the winter months, as the prevailing westerly winds bring in moisture from the Atlantic.
+
+The terrain in this region is characterized by rolling hills and low-lying valleys, with an average elevation of 123.533 meters. The landscape is dotted with small-scale agricultural fields, grasslands, and urban areas, which cover approximately 60.83%, 13.89%, and 11.39% of the region, respectively. The remaining areas are comprised of water bodies, mosaic landscapes, and deciduous forests.
+
+The region is not directly affected by monsoons, as it is situated outside the typical monsoon belt. Instead, the main airflows influencing this area are the prevailing westerly winds, which bring in moisture from the Atlantic. The region's vegetation cover, predominantly grasslands and agricultural fields, plays a significant role in influencing rainfall patterns. Human activities, such as agriculture and urbanization, also contribute to the region's rainfall patterns, although to a lesser extent.
+
+Overall, the combination of the region's geographical location, ocean influence, terrain, and vegetation cover creates a unique climate profile, characterized by mild temperatures, high humidity, and significant rainfall.

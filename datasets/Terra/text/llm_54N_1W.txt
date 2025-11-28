@@ -1,0 +1,33 @@
+Prompt: <|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a meteorological expert responsible for explaining the factors that influence climate in specific regions.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+We have a series environment-related data for a global grid divided into 1x1 degree latitude and longitude cells. Please generate a detailed text for given grid cell describing the main factors that may influence climate in that area. Include the following aspects:
+                1. **Geographical Location**: Which continent or country does it belong to?
+                2. **Climate Type**: What type of climate does this area have (e.g., tropical, temperate, polar)?
+                3. **Ocean Influence**: Is this area close to the ocean or large water bodies? How does the ocean influence the rainfall?
+                4. **Terrain**: What are the terrain features of this area (e.g., mountains, plains, deserts)?
+                5. **Monsoons**: Is this area affected by monsoons? How do monsoons influence the rainfall?
+                6. **Airflows and Wind Belts**: What are the main airflows and wind belts affecting this area?
+                7. **Vegetation Cover**: What is the vegetation cover like in this area? How does vegetation influence rainfall?
+                8. **Human Activities**: How do human activities (e.g., agriculture, urbanization) influence rainfall in this area?
+                I will provide the latitude and longitude range of the area I want to describe, along with the vegetation type percentage, climate type and average altitude of the area. This information can be used as a reference to generate a more accurate description, but do not just focus on these points. 
+                If there is no climate type, it means this area is primarily ocean.
+                Please write the description in a paragraph, and avoid saying other things.
+                Please generate a text description for (53,54)N and (0,1)W in country U.K. according to the above structure.
+                If the country information is None, this region does not belong to any country.
+                Landvegetation: cropland_rainfed_herbaceous_cover: 85.000%; mosaic_tree_and_shrub: 3.056%; grassland: 3.056%; mosaic_cropland: 2.222%; tree_needleleaved_evergreen_closed_to_open: 1.667%; water: 1.667%; mosaic_natural_vegetation: 1.389%; urban: 1.389%; mosaic_herbaceous: 0.556%.
+                Climate: Mild temperate, Fully humid, Warm summer.
+                Mean Elevation: 22.733 meter.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+
+
+
+Generated:The grid cell located at (53,54)N and (0,1)W in the United Kingdom belongs to the continent of Europe. This region falls under the category of a mild temperate climate with warm summers, characterized by moderate temperatures and precipitation throughout the year. The area is influenced by the warmth of the Gulf Stream, which originates from the Gulf of Mexico and brings mild air masses from the equator. The proximity to the Atlantic Ocean plays a significant role in shaping the climate of this region, with the prevailing westerly winds bringing moisture-laden air from the ocean. This results in a significant amount of rainfall, particularly during the winter months.
+
+The terrain of this region is characterized by gentle hills and valleys, with an average elevation of 22.733 meters. The landscape is dotted with small-scale agricultural fields, with a significant portion of the area dedicated to cropland, mainly consisting of herbaceous crops. The presence of these crops, along with the mosaic of tree and shrub cover, grassland, and urban areas, influences the local climate by modifying the microclimate and altering the local wind patterns.
+
+The region is not directly affected by monsoons, as it is located outside the typical monsoon belt. However, the prevailing westerly winds and the proximity to the Atlantic Ocean ensure that the area receives a significant amount of rainfall throughout the year. The airflows and wind belts in this region are influenced by the prevailing westerlies, which bring moist air from the ocean and result in rainfall.
+
+The vegetation cover in this region is primarily composed of cropland, with a significant portion dedicated to herbaceous crops. This vegetation cover plays a crucial role in influencing the local climate by modifying the microclimate and altering the local wind patterns. The human activities in this region, such as agriculture and urbanization, also play a significant role in shaping the local climate by modifying the land surface and altering the local wind patterns.

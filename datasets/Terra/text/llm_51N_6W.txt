@@ -1,0 +1,27 @@
+Prompt: <|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a meteorological expert responsible for explaining the factors that influence climate in specific regions.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+We have a series environment-related data for a global grid divided into 1x1 degree latitude and longitude cells. Please generate a detailed text for given grid cell describing the main factors that may influence climate in that area. Include the following aspects:
+                1. **Geographical Location**: Which continent or country does it belong to?
+                2. **Climate Type**: What type of climate does this area have (e.g., tropical, temperate, polar)?
+                3. **Ocean Influence**: Is this area close to the ocean or large water bodies? How does the ocean influence the rainfall?
+                4. **Terrain**: What are the terrain features of this area (e.g., mountains, plains, deserts)?
+                5. **Monsoons**: Is this area affected by monsoons? How do monsoons influence the rainfall?
+                6. **Airflows and Wind Belts**: What are the main airflows and wind belts affecting this area?
+                7. **Vegetation Cover**: What is the vegetation cover like in this area? How does vegetation influence rainfall?
+                8. **Human Activities**: How do human activities (e.g., agriculture, urbanization) influence rainfall in this area?
+                I will provide the latitude and longitude range of the area I want to describe, along with the vegetation type percentage, climate type and average altitude of the area. This information can be used as a reference to generate a more accurate description, but do not just focus on these points. 
+                If there is no climate type, it means this area is primarily ocean.
+                Please write the description in a paragraph, and avoid saying other things.
+                Please generate a text description for (50,51)N and (5,6)W in country None according to the above structure.
+                If the country information is None, this region does not belong to any country.
+                Landvegetation: water: 82.222%; cropland_rainfed_herbaceous_cover: 11.389%; mosaic_cropland: 1.944%; grassland: 1.389%; mosaic_natural_vegetation: 1.111%; urban: 1.111%; sparse_vegetation: 0.556%; mosaic_tree_and_shrub: 0.278%.
+                Climate: Mild temperate, Fully humid, Warm summer.
+                Mean Elevation: -54.133 meter.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+
+
+
+Generated:The grid cell located at (50,51)N and (5,6)W is situated in the Atlantic Ocean, off the western coast of Europe, and does not belong to any country. This area falls under the category of a mild temperate climate, characterized by warm summers and fully humid conditions. The ocean plays a significant role in shaping the climate of this region, with the warm Gulf Stream influencing the temperature and rainfall patterns. The proximity to the ocean also leads to a significant impact on rainfall, with the prevailing westerly winds bringing moisture-laden air from the Atlantic, resulting in a relatively high rainfall rate. The terrain of this area is primarily flat, with an average elevation of -54.133 meters, indicating that it is a continental shelf. There are no significant mountain ranges or hills in this region, which means that the airflow is relatively undisturbed, allowing the oceanic influence to dominate. Monsoons do not affect this area as it is outside the monsoon belt. The main airflows and wind belts affecting this region are the westerly winds, which bring warm and moist air from the Atlantic. The vegetation cover in this area is predominantly water bodies, with a significant portion of the land covered in croplands, grasslands, and urban areas. The human activities, such as agriculture and urbanization, may influence the rainfall patterns in this area, although the oceanic influence is the primary driver of the climate. Overall, the climate of this region is characterized by mild temperatures, high humidity, and significant rainfall, mainly driven by the oceanic influence.

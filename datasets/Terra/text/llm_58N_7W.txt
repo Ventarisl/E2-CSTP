@@ -1,0 +1,37 @@
+Prompt: <|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a meteorological expert responsible for explaining the factors that influence climate in specific regions.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+We have a series environment-related data for a global grid divided into 1x1 degree latitude and longitude cells. Please generate a detailed text for given grid cell describing the main factors that may influence climate in that area. Include the following aspects:
+                1. **Geographical Location**: Which continent or country does it belong to?
+                2. **Climate Type**: What type of climate does this area have (e.g., tropical, temperate, polar)?
+                3. **Ocean Influence**: Is this area close to the ocean or large water bodies? How does the ocean influence the rainfall?
+                4. **Terrain**: What are the terrain features of this area (e.g., mountains, plains, deserts)?
+                5. **Monsoons**: Is this area affected by monsoons? How do monsoons influence the rainfall?
+                6. **Airflows and Wind Belts**: What are the main airflows and wind belts affecting this area?
+                7. **Vegetation Cover**: What is the vegetation cover like in this area? How does vegetation influence rainfall?
+                8. **Human Activities**: How do human activities (e.g., agriculture, urbanization) influence rainfall in this area?
+                I will provide the latitude and longitude range of the area I want to describe, along with the vegetation type percentage, climate type and average altitude of the area. This information can be used as a reference to generate a more accurate description, but do not just focus on these points. 
+                If there is no climate type, it means this area is primarily ocean.
+                Please write the description in a paragraph, and avoid saying other things.
+                Please generate a text description for (57,58)N and (6,7)W in country U.K. according to the above structure.
+                If the country information is None, this region does not belong to any country.
+                Landvegetation: water: 45.278%; mosaic_herbaceous: 15.833%; shrub_or_herbaceous_cover_flooded: 12.500%; grassland: 10.833%; tree_needleleaved_evergreen_closed_to_open: 7.778%; sparse_vegetation: 6.389%; mosaic_tree_and_shrub: 0.556%; bare_areas: 0.556%; tree_broadleaved_deciduous_closed_to_open: 0.278%.
+                Climate: Mild temperate, Fully humid, Warm summer.
+                Mean Elevation: -21.633 meter.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+
+
+
+Generated:The grid cell at (57,58)N and (6,7)W is located in the western part of the United Kingdom, specifically in the region of Ireland. This area falls under the category of a mild temperate climate with fully humid conditions and warm summers. The proximity to the Atlantic Ocean has a significant influence on the climate, with the warm Gulf Stream playing a crucial role in moderating the temperature and precipitation patterns. The ocean's influence on rainfall is significant, with the prevailing westerly winds bringing in moisture-laden air from the Atlantic, resulting in frequent rainfall and cloudy conditions throughout the year.
+
+The terrain of this area is characterized by a relatively flat landscape with some low-lying hills and valleys. The mean elevation of -21.633 meters suggests that this region is below sea level, with some areas being coastal plains and others being inland valleys. The terrain features do not have a significant impact on the climate, as the region is not mountainous.
+
+The area is not directly affected by monsoons, as it is located outside the monsoon belt. However, the prevailing westerly winds and the proximity to the ocean ensure that the region receives significant rainfall throughout the year.
+
+The main airflows affecting this area are the westerly winds, which bring in moist air from the Atlantic. The wind belts in this region are influenced by the jet stream, which is a fast-moving band of air that can bring in significant weather systems.
+
+The vegetation cover in this area is diverse, with a mix of grasslands, shrubs, and trees. The dominant vegetation types are grasslands and herbaceous vegetation, which cover around 45% of the area. The vegetation has a moderate influence on rainfall, as it helps to moderate the temperature and humidity levels.
+
+Human activities, such as agriculture and urbanization, have a significant impact on the local climate. The agricultural activities in the region, such as dairy farming and sheep grazing, contribute to the release of greenhouse gases and can influence the local climate. Urbanization has also led to the development of infrastructure, which can alter the local microclimate and influence rainfall patterns.

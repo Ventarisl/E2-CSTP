@@ -1,0 +1,33 @@
+Prompt: <|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a meteorological expert responsible for explaining the factors that influence climate in specific regions.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+We have a series environment-related data for a global grid divided into 1x1 degree latitude and longitude cells. Please generate a detailed text for given grid cell describing the main factors that may influence climate in that area. Include the following aspects:
+                1. **Geographical Location**: Which continent or country does it belong to?
+                2. **Climate Type**: What type of climate does this area have (e.g., tropical, temperate, polar)?
+                3. **Ocean Influence**: Is this area close to the ocean or large water bodies? How does the ocean influence the rainfall?
+                4. **Terrain**: What are the terrain features of this area (e.g., mountains, plains, deserts)?
+                5. **Monsoons**: Is this area affected by monsoons? How do monsoons influence the rainfall?
+                6. **Airflows and Wind Belts**: What are the main airflows and wind belts affecting this area?
+                7. **Vegetation Cover**: What is the vegetation cover like in this area? How does vegetation influence rainfall?
+                8. **Human Activities**: How do human activities (e.g., agriculture, urbanization) influence rainfall in this area?
+                I will provide the latitude and longitude range of the area I want to describe, along with the vegetation type percentage, climate type and average altitude of the area. This information can be used as a reference to generate a more accurate description, but do not just focus on these points. 
+                If there is no climate type, it means this area is primarily ocean.
+                Please write the description in a paragraph, and avoid saying other things.
+                Please generate a text description for (56,57)N and (2,3)W in country None according to the above structure.
+                If the country information is None, this region does not belong to any country.
+                Landvegetation: water: 55.833%; cropland_rainfed_herbaceous_cover: 18.333%; mosaic_herbaceous: 16.667%; grassland: 4.722%; shrub_or_herbaceous_cover_flooded: 1.389%; mosaic_natural_vegetation: 0.833%; tree_needleleaved_evergreen_closed_to_open: 0.833%; urban: 0.833%; mosaic_tree_and_shrub: 0.556%.
+                Climate: Mild temperate, Fully humid, Warm summer.
+                Mean Elevation: -24.467 meter.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+
+
+
+Generated:The grid cell located at (56.0°N, 2.5°W) belongs to the country None, as it does not belong to any specific country. This area is situated in the northern part of the Atlantic Ocean, characterized by a mild temperate climate with fully humid conditions and warm summers. The climate type is primarily influenced by its proximity to the ocean, which plays a crucial role in regulating the local climate. The ocean's warm waters and moisture-laden air masses from the equator bring significant rainfall to the area, making it a humid region.
+
+The terrain of this area is characterized by a relatively flat topography, with an average elevation of approximately -24.5 meters below sea level. This low-lying area is susceptible to sea-level rise and storm surges, which can impact local rainfall patterns. The region is not significantly affected by monsoons, as it is located outside the typical monsoon belt.
+
+The main airflows and wind belts influencing this area are the westerly winds and the trade winds. These wind patterns bring in moist air from the Atlantic Ocean, which contributes to the region's rainfall. The vegetation cover in this area is predominantly composed of water (55.83%) and cropland (18.33%), with smaller percentages of other land use types. The cropland and mosaic herbaceous cover likely influence the local rainfall patterns, as they can alter the surface energy balance and affect the evapotranspiration process.
+
+Human activities, such as agriculture and urbanization, also play a role in shaping the local climate. The presence of cropland and urban areas can alter the local microclimate, potentially leading to changes in rainfall patterns. Overall, the combination of oceanic influence, terrain, and human activities contributes to the region's mild temperate climate with fully humid conditions and warm summers.

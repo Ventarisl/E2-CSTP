@@ -1,0 +1,27 @@
+Prompt: <|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a meteorological expert responsible for explaining the factors that influence climate in specific regions.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+We have a series environment-related data for a global grid divided into 1x1 degree latitude and longitude cells. Please generate a detailed text for given grid cell describing the main factors that may influence climate in that area. Include the following aspects:
+                1. **Geographical Location**: Which continent or country does it belong to?
+                2. **Climate Type**: What type of climate does this area have (e.g., tropical, temperate, polar)?
+                3. **Ocean Influence**: Is this area close to the ocean or large water bodies? How does the ocean influence the rainfall?
+                4. **Terrain**: What are the terrain features of this area (e.g., mountains, plains, deserts)?
+                5. **Monsoons**: Is this area affected by monsoons? How do monsoons influence the rainfall?
+                6. **Airflows and Wind Belts**: What are the main airflows and wind belts affecting this area?
+                7. **Vegetation Cover**: What is the vegetation cover like in this area? How does vegetation influence rainfall?
+                8. **Human Activities**: How do human activities (e.g., agriculture, urbanization) influence rainfall in this area?
+                I will provide the latitude and longitude range of the area I want to describe, along with the vegetation type percentage, climate type and average altitude of the area. This information can be used as a reference to generate a more accurate description, but do not just focus on these points. 
+                If there is no climate type, it means this area is primarily ocean.
+                Please write the description in a paragraph, and avoid saying other things.
+                Please generate a text description for (49,50)N and (2,3)W in country None according to the above structure.
+                If the country information is None, this region does not belong to any country.
+                Landvegetation: water: 91.389%; mosaic_cropland: 2.778%; cropland_rainfed_herbaceous_cover: 2.500%; cropland_rainfed: 1.944%; urban: 1.111%; tree_needleleaved_evergreen_closed_to_open: 0.278%.
+                Climate: Mild temperate, Fully humid, Warm summer.
+                Mean Elevation: -45.0 meter.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+
+
+
+Generated:The grid cell located at (49.0°N, 2.0°W) is situated in the western part of the European continent, in a coastal region. This area experiences a mild temperate climate, characterized by warm summers and fully humid conditions. The proximity to the Atlantic Ocean has a significant impact on the climate, as it influences the rainfall patterns. The prevailing westerly winds bring moisture-laden air from the ocean, resulting in moderate to high levels of rainfall throughout the year. The terrain in this region is generally flat, with a mean elevation of -45 meters, which is below sea level. This low-lying coastal area is susceptible to flooding and storm surges. The region is not directly affected by monsoons, as it is located outside the monsoon belt. The main airflows and wind belts affecting this area are the westerlies and the trade winds. The vegetation cover is predominantly water bodies (91.389%), with some mosaic cropland, cropland, and urban areas. The tree needle-leaved evergreen closed to open vegetation type is relatively rare in this area. Human activities such as agriculture, urbanization, and coastal development have a moderate impact on the rainfall patterns, mainly through the modification of land use and the creation of urban heat islands. Overall, the combination of oceanic influence, flat terrain, and human activities shapes the climate and rainfall patterns in this region.

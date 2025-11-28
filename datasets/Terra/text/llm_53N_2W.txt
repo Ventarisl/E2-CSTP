@@ -1,0 +1,29 @@
+Prompt: <|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a meteorological expert responsible for explaining the factors that influence climate in specific regions.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+We have a series environment-related data for a global grid divided into 1x1 degree latitude and longitude cells. Please generate a detailed text for given grid cell describing the main factors that may influence climate in that area. Include the following aspects:
+                1. **Geographical Location**: Which continent or country does it belong to?
+                2. **Climate Type**: What type of climate does this area have (e.g., tropical, temperate, polar)?
+                3. **Ocean Influence**: Is this area close to the ocean or large water bodies? How does the ocean influence the rainfall?
+                4. **Terrain**: What are the terrain features of this area (e.g., mountains, plains, deserts)?
+                5. **Monsoons**: Is this area affected by monsoons? How do monsoons influence the rainfall?
+                6. **Airflows and Wind Belts**: What are the main airflows and wind belts affecting this area?
+                7. **Vegetation Cover**: What is the vegetation cover like in this area? How does vegetation influence rainfall?
+                8. **Human Activities**: How do human activities (e.g., agriculture, urbanization) influence rainfall in this area?
+                I will provide the latitude and longitude range of the area I want to describe, along with the vegetation type percentage, climate type and average altitude of the area. This information can be used as a reference to generate a more accurate description, but do not just focus on these points. 
+                If there is no climate type, it means this area is primarily ocean.
+                Please write the description in a paragraph, and avoid saying other things.
+                Please generate a text description for (52,53)N and (1,2)W in country U.K. according to the above structure.
+                If the country information is None, this region does not belong to any country.
+                Landvegetation: cropland_rainfed_herbaceous_cover: 50.556%; grassland: 29.167%; urban: 5.833%; mosaic_natural_vegetation: 5.556%; mosaic_cropland: 3.333%; tree_broadleaved_deciduous_closed_to_open: 1.944%; water: 1.944%; mosaic_tree_and_shrub: 1.111%; tree_needleleaved_evergreen_closed_to_open: 0.556%.
+                Climate: Mild temperate, Fully humid, Warm summer.
+                Mean Elevation: 87.8 meter.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+
+
+
+Generated:The grid cell centered at (52,53)N and (1,2)W lies in the western part of the United Kingdom, a country located in Northwestern Europe. This region is characterized by a mild temperate climate, with warm summers and fully humid conditions throughout the year. The proximity to the Atlantic Ocean plays a significant role in shaping the climate of this area. The oceanic influence brings significant rainfall to the region, with the prevailing westerly winds picking up moisture from the warm Gulf Stream. The terrain of this region is generally flat to gently sloping, with some rolling hills and low-lying coastal areas. The area is not significantly affected by monsoons, as it is located outside the typical monsoon belt.
+
+The main airflows affecting this region are the prevailing westerlies and the occasional influence of high-pressure systems from the Azores. The dominant vegetation cover is a mix of cropland, grassland, and urban areas, with a significant proportion of herbaceous cover and scattered tree species. Human activities, such as agriculture and urbanization, also contribute to the local climate by altering the landscape and influencing local microclimates. Overall, the combination of oceanic influence, terrain, and vegetation cover creates a mild and humid climate with significant rainfall throughout the year.

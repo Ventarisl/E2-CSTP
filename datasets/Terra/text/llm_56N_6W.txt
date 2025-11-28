@@ -1,0 +1,27 @@
+Prompt: <|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a meteorological expert responsible for explaining the factors that influence climate in specific regions.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+We have a series environment-related data for a global grid divided into 1x1 degree latitude and longitude cells. Please generate a detailed text for given grid cell describing the main factors that may influence climate in that area. Include the following aspects:
+                1. **Geographical Location**: Which continent or country does it belong to?
+                2. **Climate Type**: What type of climate does this area have (e.g., tropical, temperate, polar)?
+                3. **Ocean Influence**: Is this area close to the ocean or large water bodies? How does the ocean influence the rainfall?
+                4. **Terrain**: What are the terrain features of this area (e.g., mountains, plains, deserts)?
+                5. **Monsoons**: Is this area affected by monsoons? How do monsoons influence the rainfall?
+                6. **Airflows and Wind Belts**: What are the main airflows and wind belts affecting this area?
+                7. **Vegetation Cover**: What is the vegetation cover like in this area? How does vegetation influence rainfall?
+                8. **Human Activities**: How do human activities (e.g., agriculture, urbanization) influence rainfall in this area?
+                I will provide the latitude and longitude range of the area I want to describe, along with the vegetation type percentage, climate type and average altitude of the area. This information can be used as a reference to generate a more accurate description, but do not just focus on these points. 
+                If there is no climate type, it means this area is primarily ocean.
+                Please write the description in a paragraph, and avoid saying other things.
+                Please generate a text description for (55,56)N and (5,6)W in country None according to the above structure.
+                If the country information is None, this region does not belong to any country.
+                Landvegetation: water: 68.611%; tree_needleleaved_evergreen_closed_to_open: 9.444%; mosaic_herbaceous: 6.667%; sparse_vegetation: 6.111%; grassland: 5.833%; mosaic_tree_and_shrub: 2.500%; shrub_or_herbaceous_cover_flooded: 0.833%.
+                Climate: .
+                Mean Elevation: 22.467 meter.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+
+
+
+Generated:The grid cell located at (55,56)N and (5,6)W belongs to the country None, situated in the northern part of the Atlantic Ocean. This region falls under the category of marine climate, characterized by mild temperatures and significant precipitation throughout the year. The proximity to the ocean has a profound impact on the climate, with the warmth of the Gulf Stream influencing the temperature and the prevailing westerly winds bringing significant rainfall. The terrain of this area is generally flat, with a mean elevation of 22.467 meters, which does not significantly impact the climate. The region is not affected by monsoons, as it is not located near the tropics. The main airflows and wind belts affecting this area are the westerly winds, which bring moist air from the Atlantic Ocean and contribute to the region's rainfall. The vegetation cover is primarily composed of water bodies (68.611%), with a mix of needle-leaved evergreen and herbaceous vegetation, which does not significantly influence the rainfall. Human activities, such as fishing and shipping, have a minimal impact on the climate and rainfall in this region.

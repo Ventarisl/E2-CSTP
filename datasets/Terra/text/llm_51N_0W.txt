@@ -1,0 +1,33 @@
+Prompt: <|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a meteorological expert responsible for explaining the factors that influence climate in specific regions.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+We have a series environment-related data for a global grid divided into 1x1 degree latitude and longitude cells. Please generate a detailed text for given grid cell describing the main factors that may influence climate in that area. Include the following aspects:
+                1. **Geographical Location**: Which continent or country does it belong to?
+                2. **Climate Type**: What type of climate does this area have (e.g., tropical, temperate, polar)?
+                3. **Ocean Influence**: Is this area close to the ocean or large water bodies? How does the ocean influence the rainfall?
+                4. **Terrain**: What are the terrain features of this area (e.g., mountains, plains, deserts)?
+                5. **Monsoons**: Is this area affected by monsoons? How do monsoons influence the rainfall?
+                6. **Airflows and Wind Belts**: What are the main airflows and wind belts affecting this area?
+                7. **Vegetation Cover**: What is the vegetation cover like in this area? How does vegetation influence rainfall?
+                8. **Human Activities**: How do human activities (e.g., agriculture, urbanization) influence rainfall in this area?
+                I will provide the latitude and longitude range of the area I want to describe, along with the vegetation type percentage, climate type and average altitude of the area. This information can be used as a reference to generate a more accurate description, but do not just focus on these points. 
+                If there is no climate type, it means this area is primarily ocean.
+                Please write the description in a paragraph, and avoid saying other things.
+                Please generate a text description for (50,51)N and (0,1)W in country None according to the above structure.
+                If the country information is None, this region does not belong to any country.
+                Landvegetation: water: 73.889%; grassland: 11.667%; cropland_rainfed_herbaceous_cover: 9.444%; mosaic_cropland: 3.611%; mosaic_tree_and_shrub: 0.833%; tree_broadleaved_deciduous_closed_to_open: 0.278%; sparse_vegetation: 0.278%.
+                Climate: Mild temperate, Fully humid, Warm summer.
+                Mean Elevation: -35.333 meter.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+
+
+
+Generated:The grid cell located at (50.5°N, 0.5°W) belongs to the country None, as it does not belong to any specific country. This area falls within the mild temperate climate category, characterized by warm summers and fully humid conditions. Geographically, it is situated near the western coast of Europe, with the Atlantic Ocean playing a significant role in shaping its climate. The ocean's influence on rainfall is pronounced, with prevailing westerly winds bringing moisture-laden air from the Atlantic, resulting in a significant amount of precipitation throughout the year.
+
+The terrain in this region is relatively flat, with a mean elevation of approximately -35.33 meters, indicating that it is a coastal area. The flat terrain and proximity to the ocean create a maritime climate, where the moderating influence of the sea helps regulate temperatures and precipitation patterns. The area is not significantly affected by monsoons, as it is outside the monsoon belt.
+
+The main airflows affecting this region are the prevailing westerly winds, which bring warm and moist air from the Atlantic. These winds also influence the wind belts, with the jet stream playing a significant role in shaping the regional weather patterns. The vegetation cover in this area is diverse, with a mix of water bodies, grasslands, and agricultural areas. The dominant land use is water, covering around 73.89% of the area, followed by grasslands and croplands. The sparse vegetation and tree cover do not significantly influence rainfall in this region.
+
+Human activities, such as agriculture and urbanization, do not have a significant impact on rainfall in this area, as the region's climate is primarily influenced by its geographical location and oceanic proximity. Overall, the combination of its geographical location, oceanic influence, and terrain features shapes the climate of this region, resulting in a mild temperate climate with significant precipitation throughout the year.

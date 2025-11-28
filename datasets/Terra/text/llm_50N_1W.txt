@@ -1,0 +1,31 @@
+Prompt: <|begin_of_text|><|start_header_id|>system<|end_header_id|>
+
+You are a meteorological expert responsible for explaining the factors that influence climate in specific regions.<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+We have a series environment-related data for a global grid divided into 1x1 degree latitude and longitude cells. Please generate a detailed text for given grid cell describing the main factors that may influence climate in that area. Include the following aspects:
+                1. **Geographical Location**: Which continent or country does it belong to?
+                2. **Climate Type**: What type of climate does this area have (e.g., tropical, temperate, polar)?
+                3. **Ocean Influence**: Is this area close to the ocean or large water bodies? How does the ocean influence the rainfall?
+                4. **Terrain**: What are the terrain features of this area (e.g., mountains, plains, deserts)?
+                5. **Monsoons**: Is this area affected by monsoons? How do monsoons influence the rainfall?
+                6. **Airflows and Wind Belts**: What are the main airflows and wind belts affecting this area?
+                7. **Vegetation Cover**: What is the vegetation cover like in this area? How does vegetation influence rainfall?
+                8. **Human Activities**: How do human activities (e.g., agriculture, urbanization) influence rainfall in this area?
+                I will provide the latitude and longitude range of the area I want to describe, along with the vegetation type percentage, climate type and average altitude of the area. This information can be used as a reference to generate a more accurate description, but do not just focus on these points. 
+                If there is no climate type, it means this area is primarily ocean.
+                Please write the description in a paragraph, and avoid saying other things.
+                Please generate a text description for (49,50)N and (0,1)W in country None according to the above structure.
+                If the country information is None, this region does not belong to any country.
+                Landvegetation: water: 70.278%; cropland_rainfed_herbaceous_cover: 14.167%; grassland: 6.667%; urban: 3.056%; tree_broadleaved_deciduous_closed_to_open: 2.500%; mosaic_cropland: 2.222%; cropland_rainfed: 0.833%; mosaic_tree_and_shrub: 0.278%.
+                Climate: Mild temperate, Fully humid, Warm summer.
+                Mean Elevation: 12.533 meter.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+
+
+
+
+Generated:The grid cell located at 49°N and 0°W is situated in the western part of Europe, specifically in the region of Western France. This area falls under the category of a mild temperate climate, characterized by warm summers and moderate winters. The region's climate is heavily influenced by its proximity to the Atlantic Ocean, which plays a crucial role in shaping its rainfall patterns. The prevailing westerly winds bring moisture-laden air from the ocean, resulting in significant rainfall throughout the year, with the highest amounts occurring during the winter months. The terrain of this region is relatively flat, with a mean elevation of 12.53 meters, which allows for the free flow of air and the distribution of rainfall.
+
+The region's vegetation cover is diverse, with a mix of agricultural land, grasslands, and urban areas. The dominant vegetation type is herbaceous cover, accounting for approximately 14.17% of the total land area. The presence of cropland and grasslands helps to moderate the climate by releasing moisture into the air through evapotranspiration, which in turn contributes to the region's rainfall. Human activities, such as agriculture and urbanization, also play a significant role in shaping the region's climate. The urban areas, accounting for around 3.06% of the total land area, can act as heat islands, warming the surrounding environment and influencing local rainfall patterns.
+
+In terms of airflows and wind belts, the region is influenced by the prevailing westerly winds, which bring moist air from the Atlantic Ocean. These winds also play a crucial role in shaping the region's climate by bringing warmth and moisture during the winter months. The region is not directly affected by monsoons, as it is located outside the monsoon belt. Overall, the combination of the region's geographical location, ocean influence, terrain, vegetation cover, and human activities all contribute to its mild temperate climate with significant rainfall throughout the year.
