@@ -9,7 +9,7 @@ class DeepSHAPModule(nn.Module):
     def __init__(self, nodes, his_len, d_model, state_size, device):
         super().__init__()
         self.nodes=nodes
-        self.model=Mamba(seq_len = his_len, d_model = d_model, state_size = state_size, device = device)
+        self.model=Mamba(d_model = d_model, d_state = state_size, device = device)
     def forward(self,X):
         X=X.mean(dim=0, keepdim=True)
         background_data = X.squeeze(0)
