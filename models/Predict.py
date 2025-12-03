@@ -26,14 +26,13 @@ class STGCNLayer(nn.Module):
         outputs = []
 
         for i in range(batch_size):
-            node_features = x[i] 
-            out_graph = self.graph_conv(g, node_features) 
+            node_features = x[i]
+            out_graph = self.graph_conv(g, node_features)
             out_graph = torch.relu(out_graph)
             out_graph = self.linear(out_graph)
-            outputs.append(out_graph.unsqueeze(0))  
+            outputs.append(out_graph.unsqueeze(0))
 
-        return torch.cat(outputs, dim=0) 
-
+        return torch.cat(outputs, dim=0)
 
 
 class MGCN_block(nn.Module):
@@ -75,11 +74,48 @@ class MGCN_block(nn.Module):
     def forward(self, x, adj_mx):
         x0=x
         batch_size, num_of_vertices, num_of_features, num_of_timesteps = x0.shape
-        x1 = torch.squeeze(x0, dim=2).to(self.device)
-        adj_mx_tensor = torch.from_numpy(adj_mx) if isinstance(adj_mx, np.ndarray) else adj_mx
+        
+        # 修正：确保 adj_mx 是稠密邻接矩阵，不是边索引
+        if isinstance(adj_mx, torch.Tensor) and adj_mx.dim() == 2 and adj_mx.size(0) == 2:
+            # 如果是边索引形式，重建邻接矩阵
+            edge_index = adj_mx
+            adj_dense = torch.zeros((num_of_vertices, num_of_vertices), 
+                                   device=edge_index.device, dtype=torch.float)
+            adj_dense[edge_index[0], edge_index[1]] = 1.0
+            adj_mx_tensor = adj_dense
+        elif isinstance(adj_mx, np.ndarray):
+            # 如果是numpy数组
+            adj_mx_tensor = torch.from_numpy(adj_mx).float()
+        else:
+            # 其他情况
+            adj_mx_tensor = adj_mx.float()
+            
+        adj_mx_tensor = adj_mx_tensor.to(self.device)
+        
+        # 确保邻接矩阵是正确的形状 (num_of_vertices, num_of_vertices)
+        if adj_mx_tensor.dim() == 2 and adj_mx_tensor.size(0) == adj_mx_tensor.size(1):
+            # 已经是正确的形状
+            pass
+        else:
+            # 如果不是方阵，创建一个单位矩阵
+            print(f"Warning: adj_mx shape {adj_mx_tensor.shape} is not square. Creating identity matrix.")
+            adj_mx_tensor = torch.eye(num_of_vertices, device=self.device)
+        
+        # 使用稠密矩阵的边索引
         edge_index = adj_mx_tensor.nonzero(as_tuple=False).T
-        g = dgl.graph((edge_index[0], edge_index[1]))
-        g=g.to(self.device)
+        
+        # 验证边索引的有效性
+        max_node_id = edge_index.max().item() if edge_index.numel() > 0 else 0
+        if max_node_id >= num_of_vertices:
+            print(f"Error: Edge index contains node {max_node_id}, but num_of_vertices={num_of_vertices}")
+            print("Creating simple graph with self-loops only")
+            # 创建只包含自环的简单图
+            edge_index = torch.arange(num_of_vertices, device=self.device).repeat(2, 1)
+        
+        g = dgl.graph((edge_index[0], edge_index[1]), num_nodes=num_of_vertices)
+        g = g.to(self.device)
+        
+        x1 = torch.squeeze(x0, dim=2).to(self.device)
         output_gcn = self.stgcn_layer(g, x1)
         enc_out = self.enc_embedding(output_gcn)
         mamba_output,ATT = self.encoder(enc_out)
@@ -96,25 +132,24 @@ class MGCN_block(nn.Module):
         return x_residual2
 
 
-
 class MGCN_submodule(nn.Module):
-    def __init__(self, DEVICE, in_channels, K, nb_chev_filter, nb_time_filter, time_strides, num_for_predict, len_input,adj_mx):
+    def __init__(self, DEVICE, in_channels, K, nb_chev_filter, nb_time_filter, time_strides, num_for_predict, len_input, adj_mx):
         super(MGCN_submodule, self).__init__()
-        self.Block = MGCN_block(DEVICE, in_channels, K, nb_chev_filter, nb_time_filter, time_strides ,len_input,adj_mx)
+        self.Block = MGCN_block(DEVICE, in_channels, K, nb_chev_filter, nb_time_filter, time_strides, len_input)
         self.DEVICE = DEVICE
         self.projector3 = nn.Linear(len_input, num_for_predict, bias=True)
         self.to(DEVICE)
 
     def forward(self, x):
         x = self.Block(x)
-        output=torch.squeeze(x, dim=2)
-        output= self.projector3(output)
-        output_final=output.permute(0,2,1)
+        output = torch.squeeze(x, dim=2)
+        output = self.projector3(output)
+        output_final = output.permute(0, 2, 1)
         return output_final
 
 
-def make_model(DEVICE,  in_channels, K, nb_chev_filter, nb_time_filter, time_strides, adj_mx, num_for_predict, len_input):
-    model = MGCN_submodule(DEVICE,  in_channels, K, nb_chev_filter, nb_time_filter, time_strides , num_for_predict, len_input,adj_mx)
+def make_model(DEVICE, in_channels, K, nb_chev_filter, nb_time_filter, time_strides, adj_mx, num_for_predict, len_input):
+    model = MGCN_submodule(DEVICE, in_channels, K, nb_chev_filter, nb_time_filter, time_strides, num_for_predict, len_input, adj_mx)
     for p in model.parameters():
         if p.dim() > 1:
             nn.init.xavier_uniform_(p)
@@ -138,7 +173,7 @@ class Mamba(nn.Module):
         dt_init_floor=1e-4,
         conv_bias=True,
         bias=False,
-        use_fast_path=True, 
+        use_fast_path=True,
         layer_idx=None,
         device=None,
         dtype=None,
@@ -196,11 +231,11 @@ class Mamba(nn.Module):
             "n -> d n",
             d=self.d_inner,
         ).contiguous()
-        A_log = torch.log(A) 
+        A_log = torch.log(A)
         self.A_log = nn.Parameter(A_log)
         self.A_log._no_weight_decay = True
 
-        self.D = nn.Parameter(torch.ones(self.d_inner, device=device))  # Keep in fp32
+        self.D = nn.Parameter(torch.ones(self.d_inner, device=device))
         self.D._no_weight_decay = True
 
         self.out_proj = nn.Linear(self.d_inner, self.d_model, bias=bias, **factory_kwargs)
@@ -223,8 +258,8 @@ class Mamba(nn.Module):
         if self.in_proj.bias is not None:
             xz = xz + rearrange(self.in_proj.bias.to(dtype=xz.dtype), "d -> d 1")
 
-        A = -torch.exp(self.A_log.float()) 
-        if self.use_fast_path and causal_conv1d_fn is not None and inference_params is None: 
+        A = -torch.exp(self.A_log.float())
+        if self.use_fast_path and causal_conv1d_fn is not None and inference_params is None:
             out = mamba_inner_fn(
                 xz,
                 self.conv1d.weight,
@@ -234,8 +269,8 @@ class Mamba(nn.Module):
                 self.out_proj.weight,
                 self.out_proj.bias,
                 A,
-                None, 
-                None,  
+                None,
+                None,
                 self.D.float(),
                 delta_bias=self.dt_proj.bias.float(),
                 delta_softplus=True,
@@ -243,7 +278,7 @@ class Mamba(nn.Module):
         else:
             x, z = xz.chunk(2, dim=1)
             if conv_state is not None:
-                conv_state.copy_(F.pad(x, (self.d_conv - x.shape[-1], 0))) 
+                conv_state.copy_(F.pad(x, (self.d_conv - x.shape[-1], 0)))
             if causal_conv1d_fn is None:
                 x = self.act(self.conv1d(x)[..., :seqlen])
             else:
@@ -255,7 +290,7 @@ class Mamba(nn.Module):
                     activation=self.activation,
                 )
 
-            x_dbl = self.x_proj(rearrange(x, "b d l -> (b l) d")) 
+            x_dbl = self.x_proj(rearrange(x, "b d l -> (b l) d"))
             dt, B, C = torch.split(x_dbl, [self.dt_rank, self.d_state, self.d_state], dim=-1)
             dt = self.dt_proj.weight @ dt.t()
             dt = rearrange(dt, "d (b l) -> b d l", l=seqlen)
@@ -284,7 +319,7 @@ class Mamba(nn.Module):
     def step(self, hidden_states, conv_state, ssm_state):
         dtype = hidden_states.dtype
         assert hidden_states.shape[1] == 1, "Only support decoding with 1 token at a time for now"
-        xz = self.in_proj(hidden_states.squeeze(1)) 
+        xz = self.in_proj(hidden_states.squeeze(1))
         x, z = xz.chunk(2, dim=-1)
 
         if causal_conv1d_update is None:
@@ -303,10 +338,10 @@ class Mamba(nn.Module):
                 self.activation,
             )
 
-        x_db = self.x_proj(x) 
+        x_db = self.x_proj(x)
         dt, B, C = torch.split(x_db, [self.dt_rank, self.d_state, self.d_state], dim=-1)
-        dt = F.linear(dt, self.dt_proj.weight) 
-        A = -torch.exp(self.A_log.float()) 
+        dt = F.linear(dt, self.dt_proj.weight)
+        A = -torch.exp(self.A_log.float())
 
         if selective_state_update is None:
             dt = F.softplus(dt + self.dt_proj.bias.to(dtype=dt.dtype))
@@ -370,9 +405,9 @@ class DataEmbedding_inverted(nn.Module):
         self.dropout = nn.Dropout(p=dropout)
 
     def forward(self, x):
-
         x = self.value_embedding(x)
         return self.dropout(x)
+
 
 class EncoderLayer(nn.Module):
     def __init__(self, mamba, mamba_r, d_model, d_ff=None, dropout=0.1, activation="relu"):
@@ -386,10 +421,10 @@ class EncoderLayer(nn.Module):
         self.norm2 = nn.LayerNorm(d_model)
         self.dropout = nn.Dropout(dropout)
         self.activation = F.relu if activation == "relu" else F.gelu
+        
     def forward(self, x):
-
         new_x = self.mamba(x) + self.mamba_r(x.flip(dims=[1])).flip(dims=[1])
-        attn =1
+        attn = 1
 
         x = x + new_x
         y = x = self.norm1(x)
@@ -416,4 +451,3 @@ class Encoder(nn.Module):
             x = self.norm(x)
 
         return x, attns
-
