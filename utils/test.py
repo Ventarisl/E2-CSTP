@@ -34,9 +34,9 @@ def test(model, dataset, path, max, min, args):
             pred_3, pred_6, pred_12, m_pred_3, m_pred_6, m_pred_12 = model(img_tensor, text_tensor, x_samples_tensor, 1, args.l)
 
             new_values = {
-                3: get_loss(pred_3, m_pred_3, y_samples_tensor[..., :3], data_max, data_min, args.alpha),
-                6: get_loss(pred_6, m_pred_6, y_samples_tensor[..., :6], data_max, data_min, args.alpha),
-                12: get_loss(pred_12, m_pred_12, y_samples_tensor, data_max, data_min, args.alpha)
+                3: get_loss(pred_3, m_pred_3, y_samples_tensor[..., :3], data_max, data_min, args.beta),
+                6: get_loss(pred_6, m_pred_6, y_samples_tensor[..., :6], data_max, data_min, args.beta),
+                12: get_loss(pred_12, m_pred_12, y_samples_tensor, data_max, data_min, args.beta)
             }
             for t, (mae, rmse, mape) in new_values.items():
                 for metric, value in zip(['mae', 'rmse', 'mape'], [mae, rmse, mape]):
